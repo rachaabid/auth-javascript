@@ -1,10 +1,22 @@
 function register(event){
   event.preventDefault();
-  var n = document.getElementById("inputname");
-  var p = document.getElementById("inputprenom");
-  var e = document.getElementById("inputmail");
-  var m = document.getElementById("inputpassword");
-  var c = document.getElementById("inputconfirmation");
+  var n = document.getElementById("name");
+  var p = document.getElementById("prenom");
+  var e = document.getElementById("mail");
+  var m = document.getElementById("password");
+  var c = document.getElementById("confirmation");
+
+  let z = JSON.parse(localStorage.getItem("user"));
+  const user = {
+    name: n.value,
+    prenom: p.value,
+    mail: e.value,
+    password: m.value,
+    confirmation: c.value
+  }
+
+  localStorage.setItem("user",JSON.stringify(user));
+  // document.location.reload();
 
   if (n.value == "") {
     n.classList.add("is-invalid");
