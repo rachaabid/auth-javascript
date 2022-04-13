@@ -13,7 +13,7 @@
 <body>
   <div class="container">
     <h2 class="text-center text-primary">Créer votre compte</h2>
-    <form class="row g-3 mt-4 needs-validation" novalidate>
+    <form class="row g-3 mt-4 needs-validation" onsubmit="register(event)" novalidate>
       <div class="form-group">
         <label for="name">Nom: </label>
         <input type="text" id="inputname" class="form-control" placeholder="Saisissez votre nom ici" required>
@@ -72,11 +72,12 @@
         </div>
       </div>
 
-      <button type="button" class="btn btn-success">S'inscrire</button>
+      <button type="submit" class="btn btn-success">S'inscrire</button>
+      <a href="login.html" class="text-center btn btn-link">Retour</a>
     </form>
   </div>
 
-  <script src="../js/register.js">
+  <script src="./js/register.js">
     
   </script>
 </body>

@@ -1,4 +1,5 @@
-function register(){
+function register(event){
+  event.preventDefault();
   var n = document.getElementById("inputname");
   var p = document.getElementById("inputprenom");
   var e = document.getElementById("inputmail");
@@ -13,7 +14,7 @@ function register(){
     n.classList.add("is-valid");
     n.classList.remove("is-invalid");
   }
-  console.log(n.classList);
+  // console.log(n.classList);
 
   if (p.value == "") {
     p.classList.add("is-invalid");
@@ -23,7 +24,7 @@ function register(){
     p.classList.add("is-valid");
     p.classList.remove("is-invalid");
   }
-  console.log(p.classList);
+  // console.log(p.classList);
 
   if (e.value == "") {
     e.classList.add("is-invalid");
@@ -33,7 +34,7 @@ function register(){
     e.classList.add("is-valid");
     e.classList.remove("is-invalid");
   }
-  console.log(e.classList);
+  // console.log(e.classList);
 
   if (m.value == "") {
     m.classList.add("is-invalid");
@@ -43,7 +44,7 @@ function register(){
     m.classList.add("is-valid");
     m.classList.remove("is-invalid");
   }
-  console.log(m.classList);
+  // console.log(m.classList);
 
   if (c.value == "") {
     c.classList.add("is-invalid");
@@ -53,5 +54,5 @@ function register(){
     c.classList.add("is-valid");
     c.classList.remove("is-invalid");
   }
-  console.log(c.classList);
+  // console.log(c.classList);
 }
