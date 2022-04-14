@@ -5,12 +5,12 @@ function login(event){
 
  let w = JSON.parse(localStorage.getItem("user2"));
  const user2 = [{
-   mail: mail.value},
-   {password: password.value
+   mail: "mail.value"},
+   {password: "password.value"
    }];
 
-   let mail, password = user2.find(element =>{
-     
+   let mail, password = user2.find(element => {
+
    })
 
  if (mail.value == ''){
