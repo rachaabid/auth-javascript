@@ -6,8 +6,8 @@ function register(event){
   var m = document.getElementById("password");
   var c = document.getElementById("confirmation");
 
-  let z = JSON.parse(localStorage.getItem("user"));
-  const user = {
+  let z = JSON.parse(localStorage.getItem("user1"));
+  const user1 = {
     name: n.value,
     prenom: p.value,
     mail: e.value,
@@ -15,7 +15,7 @@ function register(event){
     confirmation: c.value
   }
 
-  localStorage.setItem("user",JSON.stringify(user));
+  localStorage.setItem("user1",JSON.stringify(user1));
   // document.location.reload();
 
   if (n.value == "") {

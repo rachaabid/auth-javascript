@@ -3,6 +3,16 @@ function login(event){
  var mail = document.getElementById('mail');
  var password = document.getElementById('password');
 
+ let w = JSON.parse(localStorage.getItem("user2"));
+ const user2 = [{
+   mail: mail.value},
+   {password: password.value
+   }];
+
+   let mail, password = user2.find(element =>{
+     
+   })
+
  if (mail.value == ''){
    mail.classList.add('is-invalid');
    mail.classList.remove('is-valid');
