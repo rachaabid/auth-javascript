@@ -5,22 +5,12 @@ function register(event){
   var e = document.getElementById("mail");
   var m = document.getElementById("password");
   var c = document.getElementById("confirmation");
-
-  let z = JSON.parse(localStorage.getItem("user1"));
-  const user1 = {
-    name: n.value,
-    prenom: p.value,
-    mail: e.value,
-    password: m.value,
-    confirmation: c.value
-  }
-
-  localStorage.setItem("user1",JSON.stringify(user1));
-  // document.location.reload();
+  let isValidated = true;
 
   if (n.value == "") {
     n.classList.add("is-invalid");
     n.classList.remove("is-valid");
+    isValidated = false;
   }
   else {
     n.classList.add("is-valid");
@@ -31,6 +21,7 @@ function register(event){
   if (p.value == "") {
     p.classList.add("is-invalid");
     p.classList.remove("is-valid");
+    isValidated = false;
   }
   else {
     p.classList.add("is-valid");
@@ -38,9 +29,10 @@ function register(event){
   }
   // console.log(p.classList);
 
-  if (e.value == "") {
+  if (e.value == "" || e.value.indexOf('@')==-1) {
     e.classList.add("is-invalid");
     e.classList.remove("is-valid");
+    isValidated = false;
   }
   else {
     e.classList.add("is-valid");
@@ -51,6 +43,7 @@ function register(event){
   if (m.value == "") {
     m.classList.add("is-invalid");
     m.classList.remove("is-valid");
+    isValidated = false;
   }
   else {
     m.classList.add("is-valid");
@@ -61,10 +54,26 @@ function register(event){
   if (c.value == "") {
     c.classList.add("is-invalid");
     c.classList.remove("is-valid");
+    isValidated = false;
   }
   else {
     c.classList.add("is-valid");
     c.classList.remove("is-invalid");
   }
   // console.log(c.classList);
+   
+  if (isValidated == true){
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+  const user = {
+    name: n.value,
+    prenom: p.value,
+    mail: e.value,
+    password: m.value
+  }
+  users.push(user);
+  localStorage.setItem("users",JSON.stringify(users));
+  document.location.href="login.html";
 }
+  }
+
+  
